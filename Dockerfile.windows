@@ -96,17 +96,20 @@
 # Important notes:
 # ---------------
 #
-# The posix utilities from git aren't usable interactively as at October 2016. This
+# The POSIX utilities from Git aren't usable in containers running on Windows 10 Client
+# as of November 2016. However, they work on containers in Windows Server 2016.
+#
+# The POSIX utilities from Git aren't usable interactively as at October 2016. This
 # is because they require a console window which isn't present in a container in Windows.
 # See the example at the top of this file. Do NOT use -it in that docker run. It will not work.
 #
-# Don't attempt to use a volume for passing the source through to the container. The posix utilities will
+# Don't attempt to use a volume for passing the source through to the container. The POSIX utilities will
 # balk at reparse points. 
 #
 # The downloaded files are not cleared from the image. go.zip is used by the Windows
 # CI servers to ensure the host and image are running consistent versions of go.
 #
-# The GIT installer isn't very good at unattended install. We use techniques described
+# The Git installer isn't very good at unattended install. We use techniques described
 # at the links below to force it to set the path and other options accordingly. 
 # >> http://superuser.com/questions/944576/git-for-windows-silent-install-silent-arguments 
 # and follow through to installer at
